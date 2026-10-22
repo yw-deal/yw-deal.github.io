@@ -3,37 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yw-deal | 个人主页</title>
+    <title>AI Agent 报告</title>
     <style>
-        *{margin:0;padding:0;box-sizing:border-box;font-family:"Microsoft Yahei",sans-serif;}
-        body{background:#f4f7fa;color:#2d3748;line-height:1.7}
-        .container{max-width:800px;margin:60px auto;padding:0 20px}
-        .card{background:#fff;padding:40px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.08)}
-        h1{color:#2b6cb0;margin-bottom:8px;font-size:28px}
-        .info{color:#718096;margin-bottom:24px}
-        h2{margin:30px 0 12px;color:#2d3748;font-size:20px;border-left:4px solid #3182ce;padding-left:10px}
-        p{margin-bottom:10px}
-        .project{background:#f7fafc;padding:16px;border-radius:10px;margin:12px 0}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #24292f;
+            background-color: #ffffff;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .meta {
+            color: #656d76;
+            margin-bottom: 36px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin: 32px 0 12px;
+            font-weight: 600;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin: 24px 0 8px;
+            font-weight: 600;
+        }
+        p {
+            margin-bottom: 16px;
+        }
+        ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        blockquote {
+            border-left: 4px solid #d1d9e0;
+            padding: 0 16px;
+            color: #656d76;
+            margin: 16px 0;
+        }
+        code {
+            background-color: #f6f8fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="card">
-        <h1>yw-deal</h1>
-        <div class="info">苏州大学｜大数据专业</div>
-
-        <h2>关于我</h2>
-        <p>在校学习数据分析、Python、数据库相关知识，喜欢尝试科创项目。</p >
-
-        <h2>项目经历</h2>
-        <div class="project">
-            <strong>顺口助老助残项目</strong>
-            <p>面向老年群体、残障人士的辅助服务项目，聚焦数字反哺，降低智能设备使用门槛。</p >
-        </div>
-
-        <h2>联系方式</h2>
-        <p>GitHub：github.com/yw-deal</p >
+    <h1>AI Agent 调研报告</h1>
+    <div class="meta">
+        作者：YW-deal<br>
+        日期：2026-10-22
     </div>
-</div>
+
+    <h2>一、研究背景</h2>
+    <p>随着大语言模型快速发展，AI Agent 作为具备自主规划、工具调用、多步骤推理能力的智能主体，成为人工智能领域的热点方向。本报告梳理 AI Agent 的基础概念、核心组件、应用场景以及现存局限。</p >
+
+    <h2>二、什么是 AI Agent</h2>
+    <p>AI Agent 是一类能够感知环境、理解目标、自主拆解任务、调用外部工具、循环迭代直到完成任务的智能系统，区别于单次问答式的普通大模型对话。</p >
+    <ul>
+        <li>目标理解：接收用户需求，明确最终任务</li>
+        <li>任务规划：把复杂任务拆成多个子步骤</li>
+        <li>工具调用：调用搜索、代码执行、计算器等外部能力</li>
+        <li>反思迭代：根据结果判断是否需要重试、调整方案</li>
+    </ul>
+
+    <h2>三、核心组成模块</h2>
+    <h3>1. 大模型大脑</h3>
+    <p>负责推理、思考、生成计划，是 Agent 的决策核心。</p >
+    <h3>2. 记忆模块</h3>
+    <p>分为短期上下文记忆和长期向量库记忆，用来保存历史对话、任务中间结果。</p >
+    <h3>3. 工具集</h3>
+    <p>搜索引擎、Python 沙箱、API、文件读写等扩展能力。</p >
+    <h3>4. 规划与反思单元</h3>
+    <p>循环执行：计划 → 行动 → 观察 → 反思。</p >
+
+    <h2>四、典型应用场景</h2>
+    <ul>
+        <li>科研辅助：文献检索、数据分析、绘图、公式演算</li>
+        <li>软件开发：需求分析、写代码、调试、自动测试</li>
+        <li>个人助理：日程规划、资料整理、信息汇总</li>
+        <li>教育：个性化辅导、习题讲解、项目式学习引导</li>
+    </ul>
+
+    <h2>五、现存问题与局限</h2>
+    <p>AI Agent 目前依然存在不少短板：规划容易跑偏、工具调用出错、幻觉问题突出，长任务稳定性差，成本较高。</p >
+    <blockquote>Agent 不是万能的，适合结构化、步骤清晰的任务；开放性强、容错要求极高的场景仍需要人工审核。</blockquote>
+
+    <h2>六、总结</h2>
+    <p>AI Agent 代表大模型从“回答一句话”走向“完成一件事”，是智能化下一步的重要方向，但距离稳定可靠的通用自主智能还有很长距离。</p >
 </body>
 </html>
