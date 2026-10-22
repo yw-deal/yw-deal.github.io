@@ -10,14 +10,50 @@
             padding: 0;
             box-sizing: border-box;
         }
+        :root {
+            --text: #24292f;
+            --muted: #656d76;
+            --border: #e5e7eb;
+            --bg-side: #f6f8fa;
+            --green: #1f883d;
+            --gray: #828b96;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: #24292f;
-            background-color: #ffffff;
-            line-height: 1.7;
+            color: var(--text);
+            background: #fff;
+            display: flex;
+        }
+        /* 侧边目录 */
+        aside {
+            width: 260px;
+            background-color: var(--bg-side);
+            padding: 40px 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            border-right: 1px solid var(--border);
+        }
+        aside h4 {
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+        aside a {
+            display: block;
+            color: var(--muted);
+            text-decoration: none;
+            margin: 8px 0;
+            font-size: 0.9rem;
+        }
+        aside a:hover {
+            color: var(--text);
+        }
+        /* 主内容区 */
+        main {
+            margin-left: 260px;
+            flex: 1;
             max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 24px;
+            padding: 40px 32px;
         }
         h1 {
             font-size: 2.2rem;
@@ -25,23 +61,26 @@
             font-weight: 600;
         }
         .meta {
-            color: #656d76;
+            color: var(--muted);
             margin-bottom: 36px;
             padding-bottom: 20px;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid var(--border);
         }
         h2 {
             font-size: 1.5rem;
             margin: 32px 0 12px;
             font-weight: 600;
+            scroll-margin-top: 20px;
         }
         h3 {
             font-size: 1.2rem;
             margin: 24px 0 8px;
             font-weight: 600;
+            scroll-margin-top: 20px;
         }
         p {
             margin-bottom: 16px;
+            line-height: 1.7;
         }
         ul {
             padding-left: 24px;
@@ -53,48 +92,108 @@
         blockquote {
             border-left: 4px solid #d1d9e0;
             padding: 0 16px;
-            color: #656d76;
+            color: var(--muted);
             margin: 16px 0;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th,td {
+            border: 1px solid var(--border);
+            padding: 10px 14px;
+            text-align: left;
+        }
+        th {
+            background: var(--bg-side);
+        }
         .high {
-            color: #1f883d;
+            color: var(--green);
             font-weight: 500;
         }
         .low {
-            color: #828b96;
+            color: var(--gray);
+        }
+        @media (max-width:768px){
+            body{flex-direction:column;}
+            aside{width:100%;height:auto;position:static;border-right:none;border-bottom:1px solid var(--border);}
+            main{margin-left:0;}
         }
     </style>
 </head>
 <body>
-    <h1>AI Agent 使用情况报告</h1>
-    <div class="meta">
-        作者：YW-deal<br>
-        日期：2026-10-22
-    </div>
+    <!-- 侧边导航目录 -->
+    <aside>
+        <h4>目录</h4>
+        <a href=" ">一、调研说明</a >
+        <a href="#list">二、各Agent使用概况</a >
+        <a href="#table">三、对比汇总表</a >
+        <a href="#pref">四、使用偏好总结</a >
+        <a href="#think">五、体验反思</a >
+        <a href="#end">六、小结</a >
+    </aside>
 
-    <h2>一、调研说明</h2>
-    <p>本次报告针对 Trea、Workbody、Codex、Claude 四款AI Agent进行试用体验记录，统计本人实际使用频率、适用场景与使用感受，区分高频使用与低频使用的Agent，总结个人使用偏好。</p >
+    <main>
+        <h1>AI Agent 使用情况报告</h1>
+        <div class="meta">
+            作者：YW-deal<br>
+            日期：2026-10-22
+        </div>
 
-    <h2>二、各Agent使用概况</h2>
-    <h3>1. Trea <span class="high">（经常使用）</span></h3>
-    <p>Trea是我日常使用频率最高的Agent之一。在日常资料整理、思路梳理、文本修改、作业辅助等场景都会优先选用，响应稳定，理解需求比较顺畅，可以高效完成文字类任务。</p >
+        <h2 id="intro">一、调研说明</h2>
+        <p>本次报告针对 Trea、Workbody、Codex、Claude 四款AI Agent进行试用体验记录，统计本人实际使用频率、适用场景与使用感受，区分高频使用与低频使用的Agent，总结个人使用偏好。</p >
 
-    <h3>2. Workbody <span class="high">（经常使用）</span></h3>
-    <p>Workbody同样属于高频使用的Agent，擅长任务拆解、流程规划，能够把复杂需求拆成可执行步骤，在项目规划、分步执行类场景实用性很强，是我日常主力工具。</p >
+        <h2 id="list">二、各Agent使用概况</h2>
+        <h3>1. Trea <span class="high">（经常使用）</span></h3>
+        <p>Trea是我日常使用频率最高的Agent之一。在日常资料整理、思路梳理、文本修改、作业辅助等场景都会优先选用，响应稳定，理解需求比较顺畅，可以高效完成文字类任务。</p >
 
-    <h3>3. Codex <span class="low">（较少使用）</span></h3>
-    <p>Codex是偏向代码开发方向的编程Agent，具备代码生成、调试、仓库任务处理能力。由于我现阶段纯代码开发任务不多，所以使用频次较低，仅在需要编程相关辅助时偶尔调用体验。</p >
+        <h3>2. Workbody <span class="high">（经常使用）</span></h3>
+        <p>Workbody同样属于高频使用的Agent，擅长任务拆解、流程规划，能够把复杂需求拆成可执行步骤，在项目规划、分步执行类场景实用性很强，是我日常主力工具。</p >
 
-    <h3>4. Claude <span class="low">（较少使用）</span></h3>
-    <p>Claude 是擅长长文本推理、代码与文档分析的Agent，长上下文理解能力突出。和我日常高频需求匹配度不高，没有形成固定使用习惯，仅作为备选工具少量试用。</p >
+        <h3>3. Codex <span class="low">（较少使用）</span></h3>
+        <p>Codex是偏向代码开发方向的编程Agent，具备代码生成、调试、仓库任务处理能力。由于我现阶段纯代码开发任务不多，所以使用频次较低，仅在需要编程相关辅助时偶尔调用体验。</p >
 
-    <h2>三、使用偏好总结</h2>
-    <p>整体来看，我更偏好擅长文本处理、任务规划类的Agent。Trea和Workbody贴合我当下的学习需求，因此成为主力工具；Codex、Claude 偏向编程与长文档深度推理，和我当前日常任务契合度较低，使用机会不多。</p >
+        <h3>4. Claude <span class="low">（较少使用）</span></h3>
+        <p>Claude 是擅长长文本推理、代码与文档分析的Agent，长上下文理解能力突出。和我日常高频需求匹配度不高，没有形成固定使用习惯，仅作为备选工具少量试用。</p >
 
-    <h2>四、体验反思</h2>
-    <blockquote>不同AI Agent有各自擅长赛道，不存在绝对好坏，选择和自身任务场景匹配的Agent，才能更好发挥作用。</blockquote>
+        <h2 id="table">三、对比汇总表</h2>
+        <table>
+            <tr>
+                <th>Agent名称</th>
+                <th>使用频率</th>
+                <th>擅长方向</th>
+            </tr>
+            <tr>
+                <td>Trea</td>
+                <td class="high">高频</td>
+                <td>文字整理、思路梳理、文本润色、作业辅助</td>
+            </tr>
+            <tr>
+                <td>Workbody</td>
+                <td class="high">高频</td>
+                <td>任务拆解、流程规划、分步方案设计</td>
+            </tr>
+            <tr>
+                <td>Codex</td>
+                <td class="low">低频</td>
+                <td>代码生成、程序调试、开发辅助</td>
+            </tr>
+            <tr>
+                <td>Claude</td>
+                <td class="low">低频</td>
+                <td>超长文档阅读、深度推理、长文本分析</td>
+            </tr>
+        </table>
 
-    <h2>五、小结</h2>
-    <p>本次试用四款AI Agent，高频使用：Trea、Workbody；低频使用：Codex、Claude。后续在编程、长文档分析相关任务中，会继续尝试Codex与Claude，探索它们独有的优势。</p >
+        <h2 id="pref">四、使用偏好总结</h2>
+        <p>整体来看，我更偏好擅长文本处理、任务规划类的Agent。Trea和Workbody贴合我当下的学习需求，因此成为主力工具；Codex、Claude 偏向编程与长文档深度推理，和我当前日常任务契合度较低，使用机会不多。</p >
+
+        <h2 id="think">五、体验反思</h2>
+        <blockquote>不同AI Agent有各自擅长赛道，不存在绝对好坏，选择和自身任务场景匹配的Agent，才能更好发挥作用。</blockquote>
+
+        <h2 id="end">六、小结</h2>
+        <p>本次试用四款AI Agent，高频使用：Trea、Workbody；低频使用：Codex、Claude。后续在编程、长文档分析相关任务中，会继续尝试Codex与Claude，探索它们独有的优势。</p >
+    </main>
 </body>
 </html>
